@@ -71,13 +71,19 @@ require("autoclose").setup({
    },
 })
 
+-- empty setup using defaults
+require("nvim-tree").setup()
+
 -- setup must be called before loading
 vim.cmd.colorscheme "catppuccin"
 
--- To launch neotree on launch
-vim.cmd.Neotree "filesystem"
+-- To launch neotree on launch (no longer used)
+-- vim.cmd.Neotree "filesystem"
+
+-- To launch nvimtree on launch
+vim.cmd('NvimTreeOpen')
 
 -- To map some characters
 vim.cmd.map "<C-M> <C-W>o:q!<CR>" -- Why m? Well, it was just a convenient unassigned letter
 vim.cmd.map "<C-X> <C-W>o:wq<CR>" -- The wq to quit the editor then the q! to quit the file explorer
-vim.cmd.map "<C-T> :Hex<CR>:terminal<CR><C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-" -- 17 times
+vim.cmd.map "<C-T> <C-W>s:w<CR><C-W>j:terminal<CR><C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-" -- 17 times

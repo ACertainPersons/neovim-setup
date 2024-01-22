@@ -1,6 +1,10 @@
 -- Based on kickstart.nvim
 -- This first part is just the prepositions for the plugins
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
@@ -158,6 +162,7 @@ require('lazy').setup({
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
+    enabled = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -166,6 +171,17 @@ require('lazy').setup({
     }
   },
   { "m4xshen/autoclose.nvim", name = "autoclose"},
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    require("nvim-tree").setup {}
+  end,
+  },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
