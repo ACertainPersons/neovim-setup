@@ -1,3 +1,5 @@
+-- This is actually my custom config
+
 -- This part was taken from the documentation, Just allows me to change the config much easier
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -110,17 +112,65 @@ require('lualine').setup {
     },
 }
 
+require('dashboard').setup {
+    theme = 'hyper',
+    config = {
+      header = {
+		"",
+		"",
+		"  ⠀⢀⣴⣦⠀⠀⠀⠀⢰⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ",
+		"  ⣰⣿⣿⣿⣷⡀⠀⠀⢸⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ",
+		"  ⣿⣿⣿⣿⣿⣿⣄⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ",
+		"  ⣿⣿⣿⠈⢿⣿⣿⣦⢸⣿⣿⡇⠀⣠⠴⠒⠢⣄⠀⠀⣠⠴⠲⠦⣄⠐⣶⣆⠀⠀⢀⣶⡖⢰⣶⠀⢰⣶⣴⡶⣶⣆⣴⡶⣶⣶⡄  ",
+		"  ⣿⣿⣿⠀⠀⠻⣿⣿⣿⣿⣿⡇⢸⣁⣀⣀⣀⣘⡆⣼⠁⠀⠀⠀⠘⡇⠹⣿⡄⠀⣼⡿⠀⢸⣿⠀⢸⣿⠁⠀⢸⣿⡏⠀⠀⣿⣿  ",
+		"  ⠹⣿⣿⠀⠀⠀⠙⣿⣿⣿⡿⠃⢸⡀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⢀⡏⠀⢻⣿⣸⣿⠁⠀⢸⣿⠀⢸⣿⠀⠀⢸⣿⡇⠀⠀⣿⣿  ",
+		"  ⠀⠈⠻⠀⠀⠀⠀⠈⠿⠋⠀⠀⠈⠳⢤⣀⣠⠴⠀⠈⠧⣄⣀⡠⠞⠁⠀⠀⠿⠿⠃⠀⠀⢸⣿⠀⢸⣿⠀⠀⠸⣿⡇⠀⠀⣿⡿  ",
+		"",
+		"",
+      },
+      shortcut = {
+        { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+        {
+          icon = ' ',
+          icon_hl = '@variable',
+          desc = 'Find',
+          group = 'Label',
+          action = 'Telescope find_files',
+          key = 'f',
+        },
+        {
+          desc = ' Files',
+          group = 'Number',
+          action = 'NvimTreeOpen',
+          key = 'o',
+        },
+      },
+      footer = {
+        "",
+        "Not to worry, we are still flying half a ship. – Obi-wan Kenobi",
+        "",
+      },
+    },
+}
+
 -- setup must be called before loading
 vim.cmd.colorscheme "catppuccin"
 
--- To launch neotree on launch (no longer used)
--- vim.cmd.Neotree "filesystem"
+-- To disable indent lines for dashboard
+require("ibl").setup {
+    exclude = {
+        filetypes = {
+            'dashboard',
+        }
+    }
+}
 
 -- To launch nvimtree on launch
-vim.cmd('NvimTreeOpen')
+-- vim.cmd('NvimTreeOpen')
 
--- To map some characters
+-- To map
+vim.cmd.tnoremap "<Esc> <C-\\><C-n>" -- For easy escape from the terminal
 vim.cmd.map "<C-M> <C-W>o:q!<CR>" -- Why m? Well, it was just a convenient unassigned letter
 vim.cmd.map "<C-X> <C-W>o:wq<CR>" -- The wq to quit the editor then the q! to quit the file explorer
 vim.cmd.map "<C-T> <C-W>s:w<CR><C-W>j:terminal<CR><C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-" -- 17 times
-vim.cmd.map "<C-F> :NvimTreeToggle"
+vim.cmd.map "<C-F> :NvimTreeToggle<CR>" -- f for file

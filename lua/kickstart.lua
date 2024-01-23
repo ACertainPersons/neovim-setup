@@ -1,4 +1,5 @@
 -- The actual other setup
+-- From kickstart.nvim
 
 -- [[ Setting options ]]
 -- See `:help vim.o`

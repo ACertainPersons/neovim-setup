@@ -143,9 +143,7 @@ require('lazy').setup({
       end,
     },
   },
-
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
- 
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -222,4 +220,11 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+    end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  }
 }, {})
