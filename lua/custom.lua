@@ -114,7 +114,6 @@ require('lualine').setup {
 
 require('dashboard').setup {
     theme = 'hyper',
-    shortcut_type = 'number',
     config = {
       header = {
 		"",
@@ -130,21 +129,41 @@ require('dashboard').setup {
 		"",
       },
       shortcut = {
-        { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+        { desc = '󰊳 Update ', group = '@property', action = 'Lazy update', key = 'u' },
+        {
+          desc = ' LSP Setup ',
+          action = 'Mason',
+          key = 'm',
+        },
+        {
+          desc = ' Terminal ',
+          action = 'terminal',
+          group = 'term',
+          key = 't',
+        },
         {
           icon = ' ',
           icon_hl = '@variable',
-          desc = 'Find',
+          desc = 'Find ',
           group = 'Label',
           action = 'Telescope find_files',
           key = 'f',
         },
         {
-          desc = ' Files',
+          desc = ' Files ',
           group = 'Number',
           action = 'NvimTreeOpen',
           key = 'o',
         },
+      },
+      project = {
+            limit = 3,
+            label = 'Last Used Folders'
+      },
+      mru = {
+            limit = 5,
+            label = 'Last Opened Files',
+            cwd_only = true,
       },
       footer = {
         "",
