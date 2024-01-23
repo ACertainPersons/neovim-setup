@@ -72,7 +72,40 @@ require("autoclose").setup({
 })
 
 -- empty setup using defaults
-require("nvim-tree").setup()
+require("nvim-tree").setup(
+    {
+        view = {
+            side = 'left',
+            width = 40,
+        }
+    }
+)
+
+-- Mostly from the documentation, but slightly modified
+require('lualine').setup {
+    options = {
+        theme = "catppuccin",
+        component_separators = { left = '', right = ''},
+        always_divide_middle = true,
+        globalstatus = true,
+    },
+    sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch', 'diff', 'diagnostics'},
+        lualine_c = {'filetype', {'filename', path = 3, shorting_target = 100}}, -- path = 3: Absolute path with tilde
+        lualine_x = {'encoding', 'filetype'},
+        lualine_y = {'location'},
+        lualine_z = {{'datetime', style = "%Y/%m/%d %H:%M:%S"}}
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {},
+        lualine_z = {}
+    },
+}
 
 -- setup must be called before loading
 vim.cmd.colorscheme "catppuccin"
@@ -87,3 +120,4 @@ vim.cmd('NvimTreeOpen')
 vim.cmd.map "<C-M> <C-W>o:q!<CR>" -- Why m? Well, it was just a convenient unassigned letter
 vim.cmd.map "<C-X> <C-W>o:wq<CR>" -- The wq to quit the editor then the q! to quit the file explorer
 vim.cmd.map "<C-T> <C-W>s:w<CR><C-W>j:terminal<CR><C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-" -- 17 times
+vim.cmd.map "<C-F> :NvimTreeToggle"
