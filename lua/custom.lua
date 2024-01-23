@@ -114,6 +114,7 @@ require('lualine').setup {
 
 require('dashboard').setup {
     theme = 'hyper',
+    shortcut_type = 'number',
     config = {
       header = {
 		"",
@@ -146,6 +147,8 @@ require('dashboard').setup {
         },
       },
       footer = {
+        "",
+        "Help poor children in Uganda!",
         "",
         "Not to worry, we are still flying half a ship. – Obi-wan Kenobi",
         "",
