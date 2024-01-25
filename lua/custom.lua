@@ -157,8 +157,7 @@ require('dashboard').setup {
         },
       },
       project = {
-            limit = 3,
-            label = 'Last Used Folders'
+            enable = false,
       },
       mru = {
             limit = 5,
