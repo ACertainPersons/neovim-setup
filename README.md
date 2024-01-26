@@ -3,6 +3,8 @@
 My dotfiles for neovim
 
 ## Pictures
+![start.png](https://github.com/ACertainPersons/neovim-setup/blob/main/assets/start.png)
+![use.png](https://github.com/ACertainPersons/neovim-setup/blob/main/assets/use.png)
 
 ## Installation
 
