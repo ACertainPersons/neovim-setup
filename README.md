@@ -1,4 +1,4 @@
- Neovim Config
+# Neovim Config
 
 My dotfiles for neovim
 
