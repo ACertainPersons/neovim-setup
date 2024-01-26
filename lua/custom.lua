@@ -1,7 +1,7 @@
 -- This is actually my custom config
 
 -- This part was taken from the documentation, Just allows me to change the config much easier
-require("catppuccin").setup({
+--[[require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
     background = { -- :h background
         light = "latte",
@@ -49,7 +49,7 @@ require("catppuccin").setup({
         },
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
-})
+})]]--
 
 require("autoclose").setup({
     keys = {
@@ -89,7 +89,7 @@ require("nvim-tree").setup(
 -- Mostly from the documentation, but slightly modified
 require('lualine').setup {
     options = {
-        theme = "catppuccin",
+        theme = "everforest",
         component_separators = { left = '', right = ''},
         always_divide_middle = true,
         globalstatus = true,
@@ -175,7 +175,8 @@ require('dashboard').setup {
 }
 
 -- setup must be called before loading
-vim.cmd.colorscheme "catppuccin"
+-- vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "everforest"
 
 -- To disable indent lines for dashboard
 require("ibl").setup {

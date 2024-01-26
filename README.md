@@ -1,11 +1,9 @@
 # Neovim Config
 
-My dotfiles for neovim
+My dotfiles for neovim (everforest)
 
 ## Pictures
-
-![Screenshot 2024-01-25 at 15 17 51](https://github.com/ACertainPersons/neovim-setup/assets/127463096/0793285d-f691-4868-a7a9-ec793d68fa9c)
-![Screenshot 2024-01-25 at 15 13 26](https://github.com/ACertainPersons/neovim-setup/assets/127463096/62895b10-f8bb-44cd-a2d6-d36e69b0b235)
+Newer everforest pictures needed
 
 ## Installation
 

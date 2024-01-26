@@ -143,7 +143,8 @@ require('lazy').setup({
       end,
     },
   },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "sainnhe/everforest", name = "everforest", priority = 1000},
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000, enabled = false},
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
