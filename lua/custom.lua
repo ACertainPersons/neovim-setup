@@ -168,6 +168,8 @@ require('dashboard').setup {
         "",
         "Help poor children in Uganda!",
         "",
+        "Everforest branch - Switch the branch if you want to use catppuccin",
+        "",
         "Not to worry, we are still flying half a ship. – Obi-wan Kenobi",
         "",
       },
