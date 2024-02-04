@@ -186,6 +186,17 @@ require("ibl").setup {
     }
 }
 
+-- Setting indentation
+vim.cmd.filetype("indent on")
+vim.cmd.set "ai"
+vim.cmd.set "si"
+vim.cmd.set "shiftwidth=4"
+vim.cmd.set "pastetoggle=<F5>"
+
+-- To turn on spell check
+vim.cmd.set("mousemodel=popup")
+vim.cmd.setlocal("spell spelllang=en_ca") -- Because I am Canadian
+
 -- To launch nvimtree on launch
 -- vim.cmd('NvimTreeOpen')
 
