@@ -14,7 +14,7 @@ For Linux and macOS
 ```
 cd ~/.config
 git clone https://github.com/ACertainPersons/neovim-setup.git
-mv neovim-config nvim
+mv neovim-setup nvim
 ```
 I don't think there's anymore setup, but if you find it, please send me an issue
 
