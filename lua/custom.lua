@@ -191,7 +191,6 @@ vim.cmd.filetype("indent on")
 vim.cmd.set "ai"
 vim.cmd.set "si"
 vim.cmd.set "shiftwidth=4"
-vim.cmd.set "pastetoggle=<F5>"
 
 -- To turn on spell check
 vim.cmd.set("mousemodel=popup")
