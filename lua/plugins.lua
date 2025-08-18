@@ -251,6 +251,16 @@ require('lazy').setup({
       end,
   },
 
+  { -- LaTeX plugin
+    "lervag/vimtex",
+    lazy = false,     -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_viewgeneral_viewer = "okular"
+    end
+  },
+
   {
     -- The Dashboard!
     'nvimdev/dashboard-nvim',
