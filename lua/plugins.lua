@@ -143,9 +143,17 @@ require('lazy').setup({
       end,
     },
   },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  { "m4xshen/autoclose.nvim", name = "autoclose"},
-  {
+  { -- Catppuccin theming 
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000 },
+
+  { -- Autoclosing brackets and stuff 
+    "m4xshen/autoclose.nvim",
+    name = "autoclose"
+  },
+
+  { -- File Explorer
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
@@ -156,7 +164,8 @@ require('lazy').setup({
     require("nvim-tree").setup {}
   end,
   },
-  {
+
+  { -- Bottom status bar
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
@@ -209,7 +218,41 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+
   {
+      "williamboman/mason.nvim",
+      opts = { ensure_installed = { "tree-sitter-cli" } },
+  },
+
+  {
+      "jbyuki/nabla.nvim",
+      dependencies = {
+          "nvim-neo-tree/neo-tree.nvim",
+          "williamboman/mason.nvim",
+      },
+      lazy = true,
+
+      config = function()
+          require("nvim-treesitter.configs").setup({
+              ensure_installed = { "latex" },
+              auto_install = true,
+              sync_install = false,
+          })
+      end,
+
+      keys = function()
+          return {
+              {
+                  "<leader>p",
+                  ':lua require("nabla").popup()<cr>',
+                  desc = "NablaPopUp",
+              },
+          }
+      end,
+  },
+
+  {
+    -- The Dashboard!
     'nvimdev/dashboard-nvim',
     event = 'VimEnter',
     config = function()
