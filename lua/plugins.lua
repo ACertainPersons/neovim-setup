@@ -69,6 +69,7 @@ require('lazy').setup({
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
+
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -143,6 +144,7 @@ require('lazy').setup({
       end,
     },
   },
+
   { -- Catppuccin theming 
     "catppuccin/nvim",
     name = "catppuccin",
@@ -258,7 +260,22 @@ require('lazy').setup({
     init = function()
       -- VimTeX configuration goes here, e.g.
       vim.g.vimtex_viewgeneral_viewer = "okular"
+      vim.g.vimtex_compiler_method = "latexmk"
     end
+  },
+
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+
+    -- For `nvim-treesitter` users.
+    priority = 49,
+
+    -- For blink.cmp's completion
+    -- source
+    -- dependencies = {
+    --     "saghen/blink.cmp"
+    -- },
   },
 
   {

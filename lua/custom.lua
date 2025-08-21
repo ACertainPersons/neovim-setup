@@ -142,7 +142,7 @@ require('dashboard').setup {
           key = 't',
         },
         {
-          icon = ' ',
+          icon = '󰈞 ',
           icon_hl = '@variable',
           desc = 'Find ',
           group = 'Label',
@@ -203,5 +203,5 @@ vim.cmd.setlocal("spell spelllang=en_ca") -- Because I am Canadian
 vim.cmd.tnoremap "<Esc> <C-\\><C-n>" -- For easy escape from the terminal
 vim.cmd.map "<C-X> <C-W>o:q!<CR>"
 vim.cmd.map "<C-Q> <C-W>o:wq<CR>" -- The wq to quit the editor then the q! to quit the file explorer
-vim.cmd.map "<C-T> <C-W>s:w<CR><C-W>j:terminal<CR><C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-" -- 17 times
+vim.cmd.map "<C-T> <C-W>s:w<CR><C-W>j:terminal<CR>-<C-W>-<C-W>-<C-W>-<C-W>-<C-W>-" -- 6 times
 vim.cmd.map "<C-F> :NvimTreeToggle<CR>" -- f for file
